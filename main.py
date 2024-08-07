@@ -1,3 +1,8 @@
+"""
+This module contains a simple user interface and a menu loop 
+"""
+
+
 import datetime
 import random
 import string
@@ -18,8 +23,19 @@ while True:
     trnsct_123.check_order()
 
     while True:       
-        trnsct_123.show_menu()
+        print('\nPlease choose 1 option below.')
+        print('[1] Add item')
+        print('[2] Update item name')
+        print('[3] Update item quantity')
+        print('[4] Update item price')
+        print('[5] Delete item')
+        print('[6] Reset transaction')
+        print('[7] Check order')
+        print('[8] Finish order')
+        print('[9] Cancel')
+
         selected_menu = input(f"\nSelect menu: ")
+        
         if selected_menu == "1":
             trnsct_123.add_item()
             continue
@@ -49,6 +65,3 @@ while True:
         else:
             print("Selected menu is invalid, try again.")
             continue
-    
-
-

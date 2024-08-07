@@ -1,41 +1,45 @@
+"""
+This module contains class and methods mainly used to calculate the transaction.
+This module will be imported to module main.py.  
+"""
+
 import pandas as pd
 from tabulate import tabulate
 
 class Transaction:
     def __init__(self):
-        self.dict_trnsct = dict()
+        """Initialize a dictionary containing transaction orders"""
 
-    def show_menu(self):
-        print('\nPlease choose 1 option below.')
-        print('[1] Add item')
-        print('[2] Update item name')
-        print('[3] Update item quantity')
-        print('[4] Update item price')
-        print('[5] Delete item')
-        print('[6] Reset transaction')
-        print('[7] Check order')
-        print('[8] Finish order')
-        print('[9] Cancel')
+        self.dict_trnsct = dict()
                          
     def add_item(self):
-        print("\nAdd item")
+        """
+        Method to add items to the dictionary. 
+        Item name will be saved as keys. 
+        Item quantity, price, and total price per item will be the values.
+        """
+
         while True:
+            print("\nAdd item")
             try:
+                #adding item name, quantity, and price
                 item_name = str(input("Insert item name: "))
                 item_qty = int(input("Insert item quantity: "))
                 item_price = int(input("Insert item price: Rp  "))
                 
+                #if the added item already in the order, the quantity will be added
                 if item_name in self.dict_trnsct.keys():
                     new_item_qty = self.dict_trnsct[item_name][0] + item_qty
                     item_total_price = new_item_qty * self.dict_trnsct[item_name][1]
                     
                     self.dict_trnsct[item_name][0] = new_item_qty
                     self.dict_trnsct[item_name][2] = item_total_price
-                
+        
                 else:
                     item_total_price = item_qty*item_price
                     self.dict_trnsct[item_name] = [item_qty, item_price, item_total_price]
-                                
+
+                #a loop to add more item              
                 while True:
                     add_more_item = input("\nAdd more item (y/n)? ")
                     if add_more_item.lower() == "y":
@@ -48,11 +52,16 @@ class Transaction:
                         print("Try again.")
                         continue  
                 break
+            
+            #validating user input
             except ValueError:
                 print("Item quantity and price must be a number! Please insert the item again.")
                 continue
 
     def update_item_name(self):
+        """
+        Method to change added item name
+        """
         while True:
             print("\nUpdate item name")
             item_name = input("Item name you want to change:  ")
@@ -66,7 +75,6 @@ class Transaction:
                 print("Item name is not found, try again.")
                 continue
                 
-   
     def update_item_qty(self):
         while True:
             print("\nUpdate item quantity")
@@ -123,11 +131,11 @@ class Transaction:
         else:
             print(f"\n{tabulate(order_table, headers, tablefmt='github')}\n")
             if any(any(0 > minus for minus in val) or 0 in val for val in self.dict_trnsct.values()):
-                print("Ada kesalahan input harga atau jumlah, mohon cek order anda")
+                print("There's an error in your input, check your item's quantity and price again.")
             elif "" in self.dict_trnsct.keys():
-                print("Ada kesalahan input nama barang, mohon cek order anda")
+                print("There's an error in your input, check your item's name again.")
             else:
-                print("Pemesanan sudah benar")
+                print("No error detected.")
 
     def reset_transaction(self):
         self.dict_trnsct.clear()
