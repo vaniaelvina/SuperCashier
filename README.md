@@ -1,6 +1,6 @@
 # SuperCashier
 ## Background
-SuperCashier is a self-service cashier built using python. This project is made as a final project for a pythob class from AI/ML Engineering program by Pacmann.
+SuperCashier is a self-service cashier built using python. This project is made as a final project for a python class of AI/ML Engineering program by Pacmann.
 
 ## Tools
 Languages: 
