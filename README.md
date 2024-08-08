@@ -35,8 +35,6 @@ Libraries:
 2. Run **main.py**
 
 ## Functions
-Sure, here's the translation:
-
 - `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system.
 - `check_order()`: Function that checks if there are any stored items and if the user-inputted items are correct.
 - `add_item()`: Function that adds and stores an item.
