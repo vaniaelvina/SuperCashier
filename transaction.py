@@ -141,6 +141,7 @@ class Transaction:
             if deleted_item in self.dict_trnsct.keys():
                 del self.dict_trnsct[deleted_item]
                 self.check_order()
+                break
 
             #validating user input
             else:
@@ -163,6 +164,7 @@ class Transaction:
 
         #wchecking whether there's error in user input
         else:
+            print("\n------------------- ORDERS -------------------")
             print(f"\n{tabulate(order_table, headers, tablefmt='github')}\n")
             if any(any(0 > minus for minus in val) or 0 in val for val in self.dict_trnsct.values()):
                 print("There's an error in your input, check your item's quantity and price again.")

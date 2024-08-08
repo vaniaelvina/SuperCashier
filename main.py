@@ -60,8 +60,9 @@ while True:
             trnsct_123.check_order()
             continue
         elif selected_menu == "8":
+            print("\n----------- SUPERCASHIER -----------")
             print("\n----------- TRANSACTION INVOICE -----------")
-            print(f"\nDate: {transaction_date}")
+            print(f"Date: {transaction_date}")
             print(f"ID: {cust_ID}")
             trnsct_123.total_price()
             break
