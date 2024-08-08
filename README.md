@@ -22,7 +22,7 @@ Libraries:
 
 ## Flowchart
 ![SuperCashier Flowchart (1)](https://github.com/user-attachments/assets/6f594cb4-6595-4242-8d7f-f02aa5ead289)
-User flow explanation:
+## User flow explanation:
 1. User creates a transaction ID
 2. Because the cart is empty, user will be asked to add item name, quantity and price
 3. User can also add more items to the cart if needed
