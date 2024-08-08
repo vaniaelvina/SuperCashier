@@ -22,7 +22,7 @@ class Transaction:
         while True:
             print("\nAdd item")
             try:
-                #adding item name, quantity, and price
+                #adding item name, quantity, and price 
                 item_name = str(input("Insert item name: "))
                 item_qty = int(input("Insert item quantity: "))
                 item_price = int(input("Insert item price: Rp  "))
@@ -60,8 +60,9 @@ class Transaction:
 
     def update_item_name(self):
         """
-        Method to change added item name
+        Method to change name of an added item
         """
+        
         while True:
             print("\nUpdate item name")
             item_name = input("Item name you want to change:  ")
@@ -76,9 +77,14 @@ class Transaction:
                 continue
                 
     def update_item_qty(self):
+        """
+        Method to change quantity of an added item
+        """
+        
         while True:
             print("\nUpdate item quantity")
             item_name = input("Item name the quantity you want to change:  ")
+            
             if item_name in self.dict_trnsct.keys():
                 try:
                     updated_item_qty = int(input("New quantity:  "))
@@ -86,13 +92,23 @@ class Transaction:
                     new_total_item_price = updated_item_qty * self.dict_trnsct[item_name][1]
                     self.dict_trnsct[item_name][2] = new_total_item_price
                     self.check_order()
+                    break
+                
+                #validating user input
                 except ValueError:
                     print("Item quantity must be a number, try again.")
                     continue
+            
+            #validating user input
             else:
                 print("Item name is not found, try again.")
+                continue
     
     def update_item_price(self):
+        """
+        Method to change price of an added item
+        """
+       
         while True:
             print("\nUpdate item price")
             item_name = input("Item name which price you want to change:  ")
@@ -104,30 +120,48 @@ class Transaction:
                     self.dict_trnsct[item_name][2] = new_total_item_price
                     self.check_order()
                     break
+                
+                #validating user input
                 except ValueError:
                     print("Item price must be a number, try again.")
                     continue
+
+            #validating user input
             else:
                 print("Item name is not found, try again.")
                 continue
     
     def delete_item(self):
+        """
+        Method to delete an added item
+        """
+    
         while True:
             deleted_item = input("Item name you want to delete:  ") 
             if deleted_item in self.dict_trnsct.keys():
                 del self.dict_trnsct[deleted_item]
                 self.check_order()
+
+            #validating user input
             else:
                 print("Item name is not found, try again.")
                 continue
     
     def check_order(self):
+        """
+        Method to show ordered items and check whether user input is correct
+        """
+        
+        #create a table containing orders
         order_table=pd.DataFrame(self.dict_trnsct).T
         headers=["Item name","Item quantity","Item price", "Total item price"]
-    
+
+        #if order is empty, user will be asked to add item
         if len(self.dict_trnsct) == 0:
             print(f"Your cart is empty. Add new item below.")
             self.add_item()
+
+        #wchecking whether there's error in user input
         else:
             print(f"\n{tabulate(order_table, headers, tablefmt='github')}\n")
             if any(any(0 > minus for minus in val) or 0 in val for val in self.dict_trnsct.values()):
@@ -138,14 +172,30 @@ class Transaction:
                 print("No error detected.")
 
     def reset_transaction(self):
+        """
+        Method to delete all orders
+        """
+
         self.dict_trnsct.clear()
         print("All items have been deleted")
+        self.check_order()
 
     def total_price(self):
+        """
+        Method to calculate all orders with discounts
+        """
+        #total order counter
+        subtotal=0
+
+        #showing orders
         self.check_order()
+
+        #calculating total orders
         for item_name in self.dict_trnsct:
             subtotal += self.dict_trnsct[item_name][2]
+            final_price = subtotal
         
+        #calculating discount
         if subtotal>500_000:
             discount = int(subtotal*0.1)
             final_price = int(subtotal-discount)

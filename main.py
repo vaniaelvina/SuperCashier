@@ -1,15 +1,16 @@
 """
-This module contains a simple user interface and a menu loop 
+This module contains a simple user interface, user ID and a menu loop 
 """
-
 
 import datetime
 import random
 import string
 from transaction import *
 
+#create object
 trnsct_123 = Transaction()
 
+#greeting and user ID
 while True:
     print("\n--------- Welcome to Self-Service Cashier ---------\n")
     print("Before making transactions, please fill in the information below")
@@ -22,6 +23,7 @@ while True:
 
     trnsct_123.check_order()
 
+    #menu loop
     while True:       
         print('\nPlease choose 1 option below.')
         print('[1] Add item')
@@ -58,9 +60,13 @@ while True:
             trnsct_123.check_order()
             continue
         elif selected_menu == "8":
+            print("\n----------- TRANSACTION INVOICE -----------")
+            print(f"\nDate: {transaction_date}")
+            print(f"ID: {cust_ID}")
             trnsct_123.total_price()
-            continue
+            break
         elif selected_menu == "9":
+            trnsct_123.reset_transaction()
             break
         else:
             print("Selected menu is invalid, try again.")
