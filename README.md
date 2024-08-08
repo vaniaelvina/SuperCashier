@@ -35,51 +35,14 @@ User flow explanation:
 2. Run **main.py**
 
 ## Functions
-```
-def add_item(self):
-        """
-        Method to add items to the dictionary. 
-        Item name will be saved as keys. 
-        Item quantity, price, and total price per item will be the values.
-        """
+Sure, here's the translation:
 
-        while True:
-            print("\nAdd item")
-            try:
-                #adding item name, quantity, and price 
-                item_name = str(input("Insert item name: "))
-                item_qty = int(input("Insert item quantity: "))
-                item_price = int(input("Insert item price: Rp  "))
-                
-                #if the added item already in the order, the quantity will be added
-                if item_name in self.dict_trnsct.keys():
-                    new_item_qty = self.dict_trnsct[item_name][0] + item_qty
-                    item_total_price = new_item_qty * self.dict_trnsct[item_name][1]
-                    
-                    self.dict_trnsct[item_name][0] = new_item_qty
-                    self.dict_trnsct[item_name][2] = item_total_price
-        
-                else:
-                    item_total_price = item_qty*item_price
-                    self.dict_trnsct[item_name] = [item_qty, item_price, item_total_price]
-
-                #a loop to add more item              
-                while True:
-                    add_more_item = input("\nAdd more item (y/n)? ")
-                    if add_more_item.lower() == "y":
-                        self.add_item()
-                        break
-                    elif add_more_item.lower() == "n":
-                        self.check_order()
-                        break
-                    else:
-                        print("Try again.")
-                        continue  
-                break
-            
-            #validating user input
-            except ValueError:
-                print("Item quantity and price must be a number! Please insert the item again.")
-                continue
-```
-
+- `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system.
+- `check_order()`: Function that checks if there are any stored items and if the user-inputted items are correct.
+- `add_item()`: Function that adds and stores an item.
+- `update_item_name()`: Function that updates the name of an item.
+- `update_item_qty()`: Function that updates the quantity of an item.
+- `update_item_price()`: Function that updates the price of an item.
+- `delete_item()`: Function that deletes one or more items.
+- `reset_transaction()`: Function that deletes all or resets the items.
+- `total_price()`: Function that calculates and displays the total shopping amount, discount, and total payment.
