@@ -1,5 +1,5 @@
 # SuperCashier
-## Background
+## Description
 SuperCashier is a self-service cashier system built using python.
 
 ## Tools
@@ -18,7 +18,7 @@ Libraries:
 6. Update item price
 7. Delete item
 8. Reset transaction
-9. Cancel all transaction
+9. Exit 
 
 ## Flowchart
 ![SuperCashier Flowchart (1)](https://github.com/user-attachments/assets/6f594cb4-6595-4242-8d7f-f02aa5ead289)
