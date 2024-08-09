@@ -1,6 +1,6 @@
 # SuperCashier
 ## Background
-SuperCashier is a self-service cashier built using python. 
+SuperCashier is a self-service cashier system built using python.
 
 ## Tools
 Languages: 
@@ -36,11 +36,11 @@ Libraries:
 
 ## Functions
 - `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system.
-- `check_order()`: Function that checks if there are any stored items and if the user-inputted items are correct.
-- `add_item()`: Function that adds and stores an item.
+- `add_item()`: Function that adds and stores item.
 - `update_item_name()`: Function that updates the name of an item.
 - `update_item_qty()`: Function that updates the quantity of an item.
 - `update_item_price()`: Function that updates the price of an item.
 - `delete_item()`: Function that deletes one or more items.
 - `reset_transaction()`: Function that deletes all or resets the items.
-- `total_price()`: Function that calculates and displays the total shopping amount, discount, and total payment.
+- `check_order()`: Function that checks if there any stored items and if the user-inputted items are correct.
+- `total_price()`: Function that calculates the total shopping amount, discount, and total payment.
