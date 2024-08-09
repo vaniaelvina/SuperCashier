@@ -25,10 +25,11 @@ Libraries:
 ## User flow explanation
 1. User creates a transaction ID
 2. Because the cart is empty, user will be asked to add item name, quantity and price
-3. User can also add more items to the cart if needed
+3. User then can also add more items to the cart if needed
 4. User can check the added items and change item name, quantity, or price, delete an item, or reset all transaction if needed
-5. If user want to change the ID, user can cancel the transaction and start over
-6. When user finish adding items to the cart, the system going to calculate all the orders and discounts
+5. If user want to change the ID, user can exit the system and start over
+6. When user finish adding items to the cart, the system going to calculate all the orders
+7. 
 
 ## How to use
 1. Download this repository
