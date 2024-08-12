@@ -3,6 +3,10 @@ This module contains class and methods mainly used to calculate the transaction.
 This module will be imported to module main.py.  
 """
 
+import os
+import random
+import string
+import datetime
 import pandas as pd
 from tabulate import tabulate
 
@@ -11,6 +15,16 @@ class Transaction:
         """Initialize a dictionary containing transaction orders"""
 
         self.dict_trnsct = dict()
+    
+    def user_id(self):
+        """Create customer ID and transaction date"""
+
+        # create customer ID
+        cust_name = input("\nName: ")
+        self.cust_id = cust_name +'_'+ ''.join(random.choices(string.ascii_letters + string.digits, k=4))
+
+        # create transaction date
+        self.trnsct_date = datetime.datetime.now()
                          
     def add_item(self):
         """
@@ -22,12 +36,12 @@ class Transaction:
         while True:
             print("\nAdd item")
             try:
-                #adding item name, quantity, and price 
+                # adding item name, quantity, and price 
                 item_name = str(input("Insert item name: "))
                 item_qty = int(input("Insert item quantity: "))
                 item_price = int(input("Insert item price: Rp  "))
                 
-                #if the added item already in the order, the quantity will be added
+                # if the added item already in the order, the quantity will be added
                 if item_name in self.dict_trnsct.keys():
                     new_item_qty = self.dict_trnsct[item_name][0] + item_qty
                     item_total_price = new_item_qty * self.dict_trnsct[item_name][1]
@@ -39,7 +53,7 @@ class Transaction:
                     item_total_price = item_qty*item_price
                     self.dict_trnsct[item_name] = [item_qty, item_price, item_total_price]
 
-                #a loop to add more item              
+                # a loop to add more item              
                 while True:
                     add_more_item = input("\nAdd more item (y/n)? ")
                     if add_more_item.lower() == "y":
@@ -53,7 +67,7 @@ class Transaction:
                         continue  
                 break
             
-            #validating user input
+            # validating user input
             except ValueError:
                 print("Item quantity and price must be a number! Please insert the item again.")
                 continue
@@ -70,7 +84,6 @@ class Transaction:
                 updated_item_name = input("New item name:  ")
                 self.dict_trnsct[updated_item_name] = self.dict_trnsct[item_name]
                 del self.dict_trnsct[item_name]
-                self.check_order()
                 break
             else:
                 print("Item name is not found, try again.")
@@ -91,15 +104,14 @@ class Transaction:
                     self.dict_trnsct[item_name][0] = updated_item_qty
                     new_total_item_price = updated_item_qty * self.dict_trnsct[item_name][1]
                     self.dict_trnsct[item_name][2] = new_total_item_price
-                    self.check_order()
                     break
                 
-                #validating user input
+                # validating user input
                 except ValueError:
                     print("Item quantity must be a number, try again.")
                     continue
             
-            #validating user input
+            # validating user input
             else:
                 print("Item name is not found, try again.")
                 continue
@@ -121,12 +133,12 @@ class Transaction:
                     self.check_order()
                     break
                 
-                #validating user input
+                # validating user input
                 except ValueError:
                     print("Item price must be a number, try again.")
                     continue
 
-            #validating user input
+            # validating user input
             else:
                 print("Item name is not found, try again.")
                 continue
@@ -143,33 +155,41 @@ class Transaction:
                 self.check_order()
                 break
 
-            #validating user input
+            # validating user input
             else:
                 print("Item name is not found, try again.")
                 continue
     
     def check_order(self):
+                
         """
-        Method to show ordered items and check whether user input is correct
+        Method to check whether user order is correct
         """
         
-        #create a table containing orders
+        os.system('cls')
+        
+        # create a table containing orders
         order_table=pd.DataFrame(self.dict_trnsct).T
-        headers=["Item name","Item quantity","Item price", "Total item price"]
+        headers=["Item name","Item quantity","Item price", "Total item price"]   
 
-        #if order is empty, user will be asked to add item
+        print("\n--------------------------- SUPERCASHIER ---------------------------")
+        print("----------------------- Self-Service Cashier -----------------------")
+        print(f"\nDate: {self.trnsct_date}")
+        print(f"Your ID: {self.cust_id} ")  
+        
+        # if order is empty, user will be asked to add item
         if len(self.dict_trnsct) == 0:
-            print(f"Your cart is empty. Add new item below.")
+            print(f"\nYour cart is empty.")
             self.add_item()
 
-        #wchecking whether there's error in user input
+        # checking whether there's error in user input
         else:
-            print("\n------------------- ORDERS -------------------")
+            print("\n------------------------------ ORDERS ------------------------------")
             print(f"\n{tabulate(order_table, headers, tablefmt='github')}\n")
             if any(any(0 > minus for minus in val) or 0 in val for val in self.dict_trnsct.values()):
-                print("There's an error in your input, check your item's quantity and price again.")
+                print("There's an error in your order, check your item's quantity and price again.")
             elif "" in self.dict_trnsct.keys():
-                print("There's an error in your input, check your item's name again.")
+                print("There's an error in your order, check your item's name again.")
             else:
                 print("No error detected.")
 
@@ -180,44 +200,49 @@ class Transaction:
 
         self.dict_trnsct.clear()
         print("All items have been deleted")
-        self.check_order()
 
     def total_price(self):
         """
         Method to calculate all orders with discounts
         """
-        #total order counter
+        # total order counter
         subtotal=0
 
-        #showing orders
+        # display and checking items added
         self.check_order()
 
-        #calculating total orders
+        # calculating total orders
         for item_name in self.dict_trnsct:
             subtotal += self.dict_trnsct[item_name][2]
             final_price = subtotal
         
-        #calculating discount
-        if subtotal>500_000:
-            discount = int(subtotal*0.1)
-            final_price = int(subtotal-discount)
-            print(f"Discount 10%    = Rp {discount}")
-            print(f"Total price     = Rp {final_price}")
+        # calculating discount
+        try:
+            if subtotal>500_000:
+                discount = int(subtotal*0.1)
+                final_price = int(subtotal-discount)
+                print(f"\nDiscount 10%    = Rp {discount}")
+                print(f"Total            = Rp {final_price}")
 
-        elif subtotal>300_000:
-            discount = int(subtotal*0.08)
-            final_price = int(subtotal-discount)
-            print(f"Discount 10%    = Rp {discount}")
-            print(f"Total price     = Rp {final_price}")
+            elif subtotal>300_000:
+                discount = int(subtotal*0.08)
+                final_price = int(subtotal-discount)
+                print(f"\nDiscount 10%    = Rp {discount}")
+                print(f"Total            = Rp {final_price}")
 
-        elif subtotal>200_000:
-            discount = int(subtotal*0.05)
-            final_price = int(subtotal-discount)
-            print(f"Discount 10%    = Rp {discount}")
-            print(f"Total price     = Rp {final_price}")
+            elif subtotal>200_000:
+                discount = int(subtotal*0.05)
+                final_price = int(subtotal-discount)
+                print(f"\nDiscount 10%    = Rp {discount}")
+                print(f"Total            = Rp {final_price}")
 
-        else:
-            print(f"Total price = Rp {final_price}")
+            else:
+                print(f"\nTotal           = Rp {final_price}")
+        finally:
+            print("\n----------------------------- THANK YOU ----------------------------")
+            
+
+
 
     
 
