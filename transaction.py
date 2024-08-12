@@ -41,6 +41,14 @@ class Transaction:
                 item_qty = int(input("Insert item quantity: "))
                 item_price = int(input("Insert item price: Rp  "))
                 
+                
+                # function that validates item quantity and price to be a positive number
+                if item_qty <= 0 or item_price <= 0:
+                    print("Item quantity and price must be a positive number, please try again.")
+                    break
+                else:
+                    pass
+
                 # if the added item already in the order, the quantity will be added
                 if item_name in self.dict_trnsct.keys():
                     new_item_qty = self.dict_trnsct[item_name][0] + item_qty
@@ -186,9 +194,7 @@ class Transaction:
         else:
             print("\n------------------------------ ORDERS ------------------------------")
             print(f"\n{tabulate(order_table, headers, tablefmt='github')}\n")
-            if any(any(0 > minus for minus in val) or 0 in val for val in self.dict_trnsct.values()):
-                print("There's an error in your order, check your item's quantity and price again.")
-            elif "" in self.dict_trnsct.keys():
+            if "" in self.dict_trnsct.keys():
                 print("There's an error in your order, check your item's name again.")
             else:
                 print("No error detected.")
@@ -214,30 +220,30 @@ class Transaction:
         # calculating total orders
         for item_name in self.dict_trnsct:
             subtotal += self.dict_trnsct[item_name][2]
-            final_price = subtotal
+            total_price = subtotal
         
         # calculating discount
         try:
             if subtotal>500_000:
                 discount = int(subtotal*0.1)
-                final_price = int(subtotal-discount)
-                print(f"\nDiscount 10%    = Rp {discount}")
-                print(f"Total            = Rp {final_price}")
+                total_price = int(subtotal-discount)
+                print(f"\nDiscount 10%    = - Rp {discount}")
+                print(f"Total            = Rp {total_price}")
 
             elif subtotal>300_000:
                 discount = int(subtotal*0.08)
-                final_price = int(subtotal-discount)
-                print(f"\nDiscount 10%    = Rp {discount}")
-                print(f"Total            = Rp {final_price}")
+                total_price = int(subtotal-discount)
+                print(f"\nDiscount 8%     = - Rp {discount}")
+                print(f"Total            = Rp {total_price}")
 
             elif subtotal>200_000:
                 discount = int(subtotal*0.05)
-                final_price = int(subtotal-discount)
-                print(f"\nDiscount 10%    = Rp {discount}")
-                print(f"Total            = Rp {final_price}")
+                total_price = int(subtotal-discount)
+                print(f"\nDiscount 5%     = - Rp {discount}")
+                print(f"Total            = Rp {total_price}")
 
             else:
-                print(f"\nTotal           = Rp {final_price}")
+                print(f"\nTotal           = Rp {total_price}")
         finally:
             print("\n----------------------------- THANK YOU ----------------------------")
             

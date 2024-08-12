@@ -65,7 +65,7 @@ while True:
                 break
             case 9:
                 break
-            case 10:
+            case _:
                 print("Selected menu is invalid, try again.")
                 continue
     
