@@ -18,18 +18,22 @@ Libraries:
 6. Update item price
 7. Delete item
 8. Reset transaction
-9. Exit 
+10. Exit 
 
 ## Flowchart
-![SuperCashier Flowchart (1)](https://github.com/user-attachments/assets/6f594cb4-6595-4242-8d7f-f02aa5ead289)
+![SuperCashier Flowchart (3)](https://github.com/user-attachments/assets/72207beb-8d95-453c-9772-d4af67e70306)
+
 ## User flow explanation
-1. User creates a transaction ID
-2. Because the cart is empty, user will be asked to add item name, quantity and price
-3. User then can also add more items to the cart if needed
-4. User can check the added items and change item name, quantity, or price, delete an item, or reset all transaction if needed
-5. If user want to change the ID, user can exit the system and start over
-6. When user finish adding items to the cart, the system going to calculate all the orders
-7. 
+1. User creates a transaction ID.
+2. Because the cart is empty, user will be asked to add item name, its quantity and its price.
+3. User then can also add more items to the cart if needed.
+4. User then can also check the added items and change their name, quantity, or price, delete an item, or reset all transaction if needed.
+5. If user want to change the ID, user can exit the system and start over.
+6. When user finish adding items to the cart, the system will calculate all the orders.
+7. For subtotal amount more than Rp 500.000, user will get 10% discount.
+8. For subtotal amount more than Rp 300.000, user will get 8% discount.
+9. For subtotal amount more than Rp 200.000, user will get 5% discount.
+10. After the transaction, user can do another transaction with another transaction ID if needed.
 
 ## How to use
 1. Download this repository
