@@ -44,6 +44,7 @@ Libraries:
    `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system. In this class there are multiple methods below:
    - `init()`
      This function will initialize Transaction() and create an empty dictionary dict_trnsct.
+     https://github.com/vaniaelvina/SuperCashier/blob/baddbb5e06fcee9ab2f0baeee68bdd2dac6db816/transaction.py#L14C1-L17C34
    - `user_id()`
      This function will create a transaction ID by asking user name and create a username ID from the input. This function will also create a transaction date.
    - `add_item()`: Method that adds and stores item in the dictionary. In this method, the item name will be the key whereas item quantity and price will be the values.
