@@ -39,13 +39,18 @@ Libraries:
 1. Download this repository
 2. Run **main.py**
 
-## Functions
-- `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system.
-- `add_item()`: Function that adds and stores item.
-- `update_item_name()`: Function that updates the name of an item.
-- `update_item_qty()`: Function that updates the quantity of an item.
-- `update_item_price()`: Function that updates the price of an item.
-- `delete_item()`: Function that deletes one or more items.
-- `reset_transaction()`: Function that deletes all or resets the items.
-- `check_order()`: Function that checks if there any stored items and if the user-inputted items are correct.
-- `total_price()`: Function that calculates the total shopping amount, discount, and total payment.
+## Program Functions
+1. transcation.py
+   `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system. In this class there are multiple methods below:
+   - `init()`
+     This function will initialize Transaction() and create an empty dictionary dict_trnsct.
+   - `user_id()`
+     This function will create a transaction ID by asking user name and create a username ID from the input. This function will also create a transaction date.
+   - `add_item()`: Method that adds and stores item in the dictionary. In this method, the item name will be the key whereas item quantity and price will be the values.
+   - `update_item_name()`: Function that updates the name of an item.
+   - `update_item_qty()`: Function that updates the quantity of an item.
+   - `update_item_price()`: Function that updates the price of an item.
+   - `delete_item()`: Function that deletes one or more items.
+   - `reset_transaction()`: Function that deletes all or resets the items.
+   - `check_order()`: Function that checks if there any stored items and if the user-inputted items are correct.
+   - `total_price()`: Function that calculates the total shopping amount, discount, and total payment.
