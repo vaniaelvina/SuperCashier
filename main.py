@@ -2,29 +2,28 @@
 This module contains a simple user interface, user ID and a menu loop 
 """
 
-import datetime
-import random
-import string
-from transaction import *
+import os
+from transaction import Transaction
 
-#create object
+# create object
 trnsct_123 = Transaction()
 
-#greeting and user ID
+
 while True:
-    print("\n--------- Welcome to Self-Service Cashier ---------\n")
-    print("Before making transactions, please fill in the information below")
-    cust_name = input("\nName: ")
-    cust_ID = cust_name +'_'+ ''.join(random.choices(string.ascii_letters + string.digits, k=4))
-    transaction_date = datetime.datetime.now()
-    print(f"\nDate: {transaction_date}")
-    print(f"Your ID: {cust_ID}")
-    print(f"\nHello {cust_name}!")
 
-    trnsct_123.check_order()
+    os.system('cls')
+    
+    # greeting 
+    print("\n------------- Welcome to Self-Service Cashier -------------")
+    print("\nBefore making transactions, please fill in the information below")
+    
+    trnsct_123.user_id()
 
-    #menu loop
-    while True:       
+
+    # menu loop
+    while True:      
+        trnsct_123.check_order()
+
         print('\nPlease choose 1 option below.')
         print('[1] Add item')
         print('[2] Update item name')
@@ -34,41 +33,48 @@ while True:
         print('[6] Reset transaction')
         print('[7] Check order')
         print('[8] Finish order')
-        print('[9] Cancel')
+        print('[9] Exit')
 
-        selected_menu = input(f"\nSelect menu: ")
+        selected_menu = int(input(f"\nSelect menu: "))
         
-        if selected_menu == "1":
-            trnsct_123.add_item()
+        match selected_menu:
+            case 1:
+                trnsct_123.add_item()
+                continue
+            case 2:
+                trnsct_123.update_item_name()
+                continue
+            case 3:
+                trnsct_123.update_item_qty()
+                continue
+            case 4:
+                trnsct_123.update_item_price()
+                continue
+            case 5:
+                trnsct_123.delete_item()
+                continue
+            case 6:
+                trnsct_123.reset_transaction()
+                continue
+            case 7:
+                trnsct_123.check_order()
+                continue
+            case 8:
+                trnsct_123.check_order()
+                trnsct_123.total_price()
+                break
+            case 9:
+                break
+            case 10:
+                print("Selected menu is invalid, try again.")
+                continue
+    
+    if selected_menu == 8:
+        another_trnsct = input("\nCreate another transaction (y/n)?  ")
+        if another_trnsct.lower() == "y":
             continue
-        elif selected_menu == "2":
-            trnsct_123.update_item_name()
-            continue
-        elif selected_menu == "3":
-            trnsct_123.update_item_qty()
-            continue
-        elif selected_menu == "4":
-            trnsct_123.update_item_price()
-            continue
-        elif selected_menu == "5":
-            trnsct_123.delete_item()
-            continue
-        elif selected_menu == "6":
-            trnsct_123.reset_transaction()
-            continue
-        elif selected_menu == "7":
-            trnsct_123.check_order()
-            continue
-        elif selected_menu == "8":
-            print("\n----------- SUPERCASHIER -----------")
-            print("\n----------- TRANSACTION INVOICE -----------")
-            print(f"Date: {transaction_date}")
-            print(f"ID: {cust_ID}")
-            trnsct_123.total_price()
-            break
-        elif selected_menu == "9":
-            trnsct_123.reset_transaction()
-            break
-        else:
-            print("Selected menu is invalid, try again.")
-            continue
+        elif another_trnsct.lower() == "n":
+            break  
+
+            
+
