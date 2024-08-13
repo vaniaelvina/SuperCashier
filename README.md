@@ -59,9 +59,28 @@ Libraries:
      Function that updates the name of an item.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L83-L98
 
-   - `update_item_qty()`: Function that updates the quantity of an item.
-   - `update_item_price()`: Function that updates the price of an item.
-   - `delete_item()`: Function that deletes one or more items.
-   - `reset_transaction()`: Function that deletes all or resets the items.
-   - `check_order()`: Function that checks if there any stored items and if the user-inputted items are correct.
-   - `total_price()`: Function that calculates the total shopping amount, discount, and total payment.
+   - `update_item_qty()`
+     Function that updates the quantity of an item.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L100-L125
+     
+   - `update_item_price()`
+   
+     Function that updates the price of an item.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L127-L152
+     
+   - `delete_item()`
+   
+     Function that deletes one or more items.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L154-L169
+   - `check_order()`
+
+     Function that checks if there any stored items and if the user-inputted items are correct.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L171-L201
+   - `reset_transaction()`
+   
+     Function that deletes all the items.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L202-L208
+   - `total_price()`
+   
+     Function that calculates the subtotal amount, discount, and total price.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L210-L248
