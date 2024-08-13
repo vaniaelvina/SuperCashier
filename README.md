@@ -43,13 +43,22 @@ Libraries:
 1. transcation.py
    `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system. In this class there are multiple methods below:
    - `init()`
+
      This function will initialize Transaction() and create an empty dictionary dict_trnsct.
      https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L14-L17
    - `user_id()`
+
      This function will create a transaction ID by asking user name and create a username ID from the input. This function will also create a transaction date.
      https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L19-L27
-   - `add_item()`: Method that adds and stores item in the dictionary. In this method, the item name will be the key whereas item quantity and price will be the values.
-   - `update_item_name()`: Function that updates the name of an item.
+   - `add_item()`
+
+     This function adds and stores item in the dictionary. In this method, the item name will be the key whereas item quantity and price will be the values.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L29-L82
+   - `update_item_name()`
+
+     Function that updates the name of an item.
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L83-L98
+
    - `update_item_qty()`: Function that updates the quantity of an item.
    - `update_item_price()`: Function that updates the price of an item.
    - `delete_item()`: Function that deletes one or more items.
