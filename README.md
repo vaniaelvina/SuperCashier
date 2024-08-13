@@ -47,6 +47,7 @@ Libraries:
      https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L19C1-L27C51
    - `user_id()`
      This function will create a transaction ID by asking user name and create a username ID from the input. This function will also create a transaction date.
+     https://github.com/vaniaelvina/SuperCashier/blob/a1d5c5aa7b3ff987094dc9b2b529da903cea19f6/transaction.py#L19C1-L27C51
    - `add_item()`: Method that adds and stores item in the dictionary. In this method, the item name will be the key whereas item quantity and price will be the values.
    - `update_item_name()`: Function that updates the name of an item.
    - `update_item_qty()`: Function that updates the quantity of an item.
