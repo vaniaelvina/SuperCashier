@@ -86,6 +86,3 @@ Libraries:
    
      This method calculates the subtotal amount, discount, and total price.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L210-L248
-
-## Test case
-
