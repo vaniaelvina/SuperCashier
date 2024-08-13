@@ -18,7 +18,7 @@ Libraries:
 6. Update item price
 7. Delete item
 8. Reset transaction
-10. Exit 
+9. Cancel transaction
 
 ## Flowchart
 ![SuperCashier Flowchart (3)](https://github.com/user-attachments/assets/72207beb-8d95-453c-9772-d4af67e70306)
@@ -39,48 +39,53 @@ Libraries:
 1. Download this repository
 2. Run **main.py**
 
-## Program Functions
+## Program explanation
 1. transcation.py
-   `Transaction()`: Class that contains all the functions to execute the transaction process in the cashier system. In this class there are multiple methods below:
+   `Transaction()`
+
+   Class that contains all the functions to execute the transaction process in the cashier system. In this class there are multiple methods below:
    - `init()`
 
-     This function will initialize Transaction() and create an empty dictionary dict_trnsct.
+     This method will initialize Transaction() and create an empty dictionary dict_trnsct.
      https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L14-L17
    - `user_id()`
 
-     This function will create a transaction ID by asking user name and create a username ID from the input. This function will also create a transaction date.
+     This method will create a transaction ID by asking user name and create a username ID from the input. This function will also create a transaction date.
      https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L19-L27
    - `add_item()`
 
-     This function adds and stores item in the dictionary. In this method, the item name will be the key whereas item quantity and price will be the values.
+     This method adds and stores item in the dictionary. In this method, the item name will be the key whereas item quantity and price will be the values.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L29-L82
    - `update_item_name()`
 
-     Function that updates the name of an item.
+     This method updates the name of an item.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L83-L98
 
    - `update_item_qty()`
-     Function that updates the quantity of an item.
+     This method updates the quantity of an item.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L100-L125
      
    - `update_item_price()`
    
-     Function that updates the price of an item.
+     This method updates the price of an item.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L127-L152
      
    - `delete_item()`
    
-     Function that deletes one or more items.
+     This method deletes an item.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L154-L169
    - `check_order()`
 
-     Function that checks if there any stored items and if the user-inputted items are correct.
+     This method checks if there any stored items and if the user-inputted items are correct.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L171-L201
    - `reset_transaction()`
    
-     Function that deletes all the items.
+     This method deletes all the items.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L202-L208
    - `total_price()`
    
-     Function that calculates the subtotal amount, discount, and total price.
+     This method calculates the subtotal amount, discount, and total price.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L210-L248
+
+## Test case
+
