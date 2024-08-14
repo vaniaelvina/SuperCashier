@@ -95,10 +95,12 @@ Say a customer named Andi want to make a transaction. The program will greet him
 ![image](https://github.com/user-attachments/assets/a7fe3d19-ed54-4725-9756-d6b22a608e54)
 1. Say Andi want to order
    - Fried Chicken
+
      Quantity: 2
      Price: Rp 20000
    - Toothpaste
-     Quantity: 3
+
+      Quantity: 3
      Price: Rp 15000
    
    He will need to input each item's quantity and price as seen in the pictures below. After he's done adding items, the system will show all his orders, check any errors, and also show a menu.
