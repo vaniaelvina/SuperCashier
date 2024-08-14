@@ -91,31 +91,38 @@ Libraries:
 
 ## Test case
 Say a customer named Andi want to make a transaction. The program will greet him and ask him to input his name then create an ID. Then, the program will show that his cart is empty and he will be asked to add an item to his cart.
+
 ![image](https://github.com/user-attachments/assets/7c224f2c-34bd-4214-905d-a6d80177fbaa)
 ![image](https://github.com/user-attachments/assets/a7fe3d19-ed54-4725-9756-d6b22a608e54)
 1. Say Andi want to order
    - Fried Chicken
 
      Quantity: 2
+
      Price: Rp 20000
    - Toothpaste
 
-      Quantity: 3
+     Quantity: 3
+
      Price: Rp 15000
    
    He will need to input each item's quantity and price as seen in the pictures below. After he's done adding items, the system will show all his orders, check any errors, and also show a menu.
-![image](https://github.com/user-attachments/assets/b76730c0-6a2d-4929-997a-ee5668017e4a)
-![image](https://github.com/user-attachments/assets/96546353-df18-4396-92d6-68d0a7336ac0)
-![image](https://github.com/user-attachments/assets/84bf2d10-4abe-47c5-a384-5385ffd5ce33)
+   
+   ![image](https://github.com/user-attachments/assets/b76730c0-6a2d-4929-997a-ee5668017e4a)
+   ![image](https://github.com/user-attachments/assets/96546353-df18-4396-92d6-68d0a7336ac0)
+   ![image](https://github.com/user-attachments/assets/84bf2d10-4abe-47c5-a384-5385ffd5ce33)
 
 2. If Andi want to delete an item, he will need to choose menu `5` and type the item he want to delete. When an item is deleted, the system will automatically show all the orders without the deleted item.
+   
    ![image](https://github.com/user-attachments/assets/e9b66720-d756-4b16-bfd5-172e78f29852)
    ![image](https://github.com/user-attachments/assets/e2316c78-c890-44ca-ae22-969417aa0f72)
 
 3. If Andi want to delete all transaction without making a new ID, he can choose menu `6` to reset transaction. The system will delete all ordered items and show an empty cart then ask him to add items.
+   
    ![image](https://github.com/user-attachments/assets/3f440bac-0c3d-454d-b9c5-6b7fda94836d)
 
 4. When Andi is done with the transaction, the system will show all ordered items and the total.
+   
    ![image](https://github.com/user-attachments/assets/a628c0c4-fbfa-4db7-97dc-605680b01f3f)
 
 
