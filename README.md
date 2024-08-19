@@ -1,6 +1,10 @@
 # SuperCashier
+
 ## Description
 SuperCashier is a self-service cashier system built using python. 
+
+## Project Background
+Andi is an owner of a supermarket located in one of the small towns in Indonesia. Andi has a plan to improve the business process, which is that Andi will implement a cashier system that can be self-service, so customers can directly scan and pay for the items they buy, reducing the time spent buying, so customers do not have to queue at said town’s supermarket anymore. After conducting research, it turns out that there are problems with the system. Andi needs a Programmer to create a feature - fix for this self-service cashier system so that it can run smoothly.
 
 ## Tools
 Languages: 
