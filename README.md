@@ -132,7 +132,7 @@ Say a customer named Andi want to make a transaction. The program will greet him
 2. If Andi want to delete an item, he will need to choose menu `5` and type the item he want to delete. When an item is deleted, the system will automatically show all the orders without the deleted item.
    
    ![image](https://github.com/user-attachments/assets/e9b66720-d756-4b16-bfd5-172e78f29852)
-   ![image](https://github.com/user-attachments/assets/e2316c78-c890-44ca-ae22-969417aa0f72)
+   ![image](https://github.com/user-attachments/assets/8d287583-58e6-4fa0-8630-8cc986348352)
 
 3. If Andi want to delete all transaction without making a new ID, he can choose menu `6` to reset transaction. The system will delete all ordered items and show an empty cart then ask him to add items.
    
