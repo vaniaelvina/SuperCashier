@@ -2,11 +2,16 @@ from transaction import Transaction
 
 def main_menu(trnsct_123):
     '''
-    This function shows ordered items and a menu loop
+    This function shows ordered items and menu
     '''
     
+    # a loop to show ordered items and menu
     while True:
+
+        # showing ordered items
         trnsct_123.check_order()
+
+        # showing menu 
         print('\nPlease choose 1 option below.')
         print('[1] Add item')
         print('[2] Update item name')
@@ -18,6 +23,7 @@ def main_menu(trnsct_123):
         print('[8] Finish order')
         print('[9] Exit')
 
+        # ask user to select a menu
         try:
             selected_menu = int(input("\nSelect menu: "))
             if selected_menu not in range(1, 10):
@@ -44,8 +50,13 @@ def main_menu(trnsct_123):
             case _: print("Selected menu is invalid, try again.")
 
 def main():
+
+    '''This function creates a transaction object and display a simple UI for user'''
+
+    # creates an object
     trnsct_123 = Transaction()
     
+    # display a simple UI for user 
     while True:
         trnsct_123.clear_screen()
         print("\n------------- Welcome to Self-Service Cashier -------------")
@@ -55,6 +66,7 @@ def main():
 
         main_menu(trnsct_123)
 
+        # a loop for additional transaction by user
         while True:
             another_trnsct = input("\nCreate another transaction (y/n)?  ").strip().lower()
             if another_trnsct == "n":
@@ -66,5 +78,3 @@ def main():
         if another_trnsct == "n":
             break
 
-if __name__ == "__main__":
-    main()
