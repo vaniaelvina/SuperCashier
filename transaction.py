@@ -16,8 +16,13 @@ class Transaction:
 
         self.dict_trnsct = dict()
     
+    def clear_screen(self):
+        """Method to clear user screen"""
+
+        os.system('cls' if os.name == 'nt' else 'clear')
+
     def user_id(self):
-        """Create customer ID and transaction date"""
+        """Method to create customer ID and transaction date"""
 
         # create customer ID
         cust_name = input("\nName: ")
