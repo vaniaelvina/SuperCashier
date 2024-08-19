@@ -94,6 +94,7 @@ Libraries:
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L215-L253
      
 2. main.py
+   
    This module imports functions from module Transaction.py and methods to show simple UI with menu.
    - `main_menu(trnsct_123)`
 
