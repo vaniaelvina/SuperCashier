@@ -43,7 +43,8 @@ Libraries:
 
 ## Program explanation
 1. transcation.py
-   `Transaction()`
+
+    `Transaction()`
 
    Class that contains all the functions to execute the transaction process in the cashier system. In this class there are multiple methods below:
    - `init()`
@@ -93,7 +94,7 @@ Libraries:
      This method calculates the subtotal of the items ordered, discount, and total price. For subtotal amount more than Rp 500.000, user will get 10% discount. For subtotal amount more than Rp 300.000, user will get 8% discount. For subtotal amount more than Rp 200.000, user will get 5% discount.
      https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L215-L253
      
-2. main.py
+3. main.py
    
    This module imports functions from module Transaction.py and methods to show simple UI.
    - `main_menu(trnsct_123)`
