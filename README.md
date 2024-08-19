@@ -55,7 +55,7 @@ Andi is an owner of a supermarket located in one of the small towns in Indonesia
 
      This method will initialize Transaction() and create an empty dictionary dict_trnsct.
      https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L14-L17
-   - clear_screen()
+   - `clear_screen()`
 
      This method will clear the user screen and can be called when needed.
      https://github.com/vaniaelvina/SuperCashier/blob/5d35deb127802165d5b91c022d34dea5cd51063b/transaction.py#L19-L22
