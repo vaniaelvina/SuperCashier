@@ -50,47 +50,61 @@ Libraries:
 
      This method will initialize Transaction() and create an empty dictionary dict_trnsct.
      https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L14-L17
+   - clear_screen()
+
+     This method will clear the user screen and can be called when needed.
+     https://github.com/vaniaelvina/SuperCashier/blob/5d35deb127802165d5b91c022d34dea5cd51063b/transaction.py#L19-L22
    - `user_id()`
 
      This method will create an ID by asking user name and create a user ID from the input. This function will also create a transaction date.
-     https://github.com/vaniaelvina/SuperCashier/blob/74accee37d5c8d0e78d2c8c319ec654a5964eaa6/transaction.py#L19-L27
+     https://github.com/vaniaelvina/SuperCashier/blob/5d35deb127802165d5b91c022d34dea5cd51063b/transaction.py#L24-L32
    - `add_item()`
 
      This method adds and stores item in the dictionary. In this method, the user will be asked to input the item's name they want to add, its quantity and its price. It will first check whether the input is correct before proceeding. If the input is not valid, the system will ask the user to input the item again. If the input is valid, the system will calculate the total price of the item. It will also offer the user whether they want to add more than 1 item. In this method, the item name will be the key of the dictionary whereas item quantity, price per item and total price per item will be the values.      
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L29-L82
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L34-L86
    - `update_item_name()`
 
      This method updates the name of an item. First, the system will ask the user which item's quantity they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct name, update it, and delete the old name from the ordered items.
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L83-L98
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L88-L103
 
    - `update_item_qty()`
      This method updates the quantity of an item. First, the system will ask the user which item's quantity they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct quantity, update it, and delete the old quantity from the ordered items. It will also calculate the total price of an item"
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L100-L125
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L105-L130
      
    - `update_item_price()`
    
      This method updates the price of an item. First, the system will ask the user which item's price they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct price, update it, and delete the old price from the ordered items. It will also calculate the total price of an item."
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L127-L152
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L132-L157
      
    - `delete_item()`
    
      This method deletes an item.
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L154-L169
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L159-L174
    - `check_order()`
 
      This method checks if there are any stored items and if the user-inputted items are correct. This method will show customer ID, transaction date, all the ordered items with its quantity, its price per item and total price per item. If there are any empty input, it will notice the customer. Otherwise, it will state that there's no error detected.
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L171-L201
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L176-L205
    - `reset_transaction()`
    
      This method deletes all the items.
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L202-L208
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L207-L213
    - `total_price()`
    
      This method calculates the subtotal of the items ordered, discount, and total price. For subtotal amount more than Rp 500.000, user will get 10% discount. For subtotal amount more than Rp 300.000, user will get 8% discount. For subtotal amount more than Rp 200.000, user will get 5% discount.
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L210-L248
+     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L215-L253
      
 2. main.py
-   This module contains a simple user interface, user ID and a menu loop. 
+   This module imports functions from module Transaction.py and methods to show simple UI with menu.
+   - `main_menu(trnsct_123)`
+
+     This function displays the ordered items and a menu for the user to interact with the Transaction object which is trnsct_123. It also contains menu loop and ask user to input their selected menu.  If the input is not a number between 1 and 9, it will ask the user to re-input the menu.
+     https://github.com/vaniaelvina/SuperCashier/blob/05d3bc828f45ef14121549c07f7b679e9a39e1f3/main.py#L3-L50
+
+   - `main()`
+     
+     This function drives the program's overall flow. It creates an instance of the Transaction class which is trnsct_123. It will greet user and call methods that will create customer ID and show function main menu.
+     https://github.com/vaniaelvina/SuperCashier/blob/05d3bc828f45ef14121549c07f7b679e9a39e1f3/main.py#L52-L79C
+   
 ## Test case
 Say a customer named Andi want to make a transaction. The program will greet him and ask him to input his name then create an ID. Then, the program will show that his cart is empty and he will be asked to add an item to his cart.
    ![image](https://github.com/user-attachments/assets/7c224f2c-34bd-4214-905d-a6d80177fbaa)
