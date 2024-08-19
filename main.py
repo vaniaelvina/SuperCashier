@@ -1,6 +1,10 @@
 from transaction import Transaction
 
 def main_menu(trnsct_123):
+    '''
+    This function shows ordered items and a menu loop
+    '''
+    
     while True:
         trnsct_123.check_order()
         print('\nPlease choose 1 option below.')
@@ -16,6 +20,8 @@ def main_menu(trnsct_123):
 
         try:
             selected_menu = int(input("\nSelect menu: "))
+            if selected_menu not in range(1, 10):
+                raise ValueError
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 9.")
             continue
@@ -32,7 +38,9 @@ def main_menu(trnsct_123):
                 trnsct_123.check_order()
                 trnsct_123.total_price()
                 return
-            case 9: return
+            case 9: 
+                trnsct_123.reset_transaction()
+                return
             case _: print("Selected menu is invalid, try again.")
 
 def main():
@@ -47,7 +55,14 @@ def main():
 
         main_menu(trnsct_123)
 
-        another_trnsct = input("\nCreate another transaction (y/n)?  ").strip().lower()
+        while True:
+            another_trnsct = input("\nCreate another transaction (y/n)?  ").strip().lower()
+            if another_trnsct == "n":
+                break
+            elif another_trnsct == "y":
+                continue
+            else:
+                print("Invalid input, please try again.")
         if another_trnsct == "n":
             break
 
