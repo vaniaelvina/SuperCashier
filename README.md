@@ -46,7 +46,7 @@ Andi is an owner of a supermarket located in one of the small towns in Indonesia
 2. Run **main.py**
 
 ## Program explanation
-1. transcation.py
+1. transaction.py
 
     `Transaction()`
 
@@ -109,7 +109,7 @@ Andi is an owner of a supermarket located in one of the small towns in Indonesia
    - `main()`
      
      This function drives the program's overall flow. It creates an instance of the Transaction class which is trnsct_123. It will greet user and call methods that will create customer ID and show function main menu.
-     https://github.com/vaniaelvina/SuperCashier/blob/05d3bc828f45ef14121549c07f7b679e9a39e1f3/main.py#L52-L79C
+     https://github.com/vaniaelvina/SuperCashier/blob/05d3bc828f45ef14121549c07f7b679e9a39e1f3/main.py#L52-L79
    
 ## Test case
 Say a customer named Andi want to make a transaction. The program will greet him and ask him to input his name then create an ID. Then, the program will show that his cart is empty and he will be asked to add an item to his cart.
