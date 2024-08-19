@@ -108,6 +108,7 @@ Libraries:
    
 ## Test case
 Say a customer named Andi want to make a transaction. The program will greet him and ask him to input his name then create an ID. Then, the program will show that his cart is empty and he will be asked to add an item to his cart.
+   
    ![image](https://github.com/user-attachments/assets/7c224f2c-34bd-4214-905d-a6d80177fbaa)
    ![image](https://github.com/user-attachments/assets/a7fe3d19-ed54-4725-9756-d6b22a608e54)
 1. Say Andi want to order
