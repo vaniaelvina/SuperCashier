@@ -95,7 +95,7 @@ Libraries:
      
 2. main.py
    
-   This module imports functions from module Transaction.py and methods to show simple UI with menu.
+   This module imports functions from module Transaction.py and methods to show simple UI.
    - `main_menu(trnsct_123)`
 
      This function displays the ordered items and a menu for the user to interact with the Transaction object which is trnsct_123. It also contains menu loop and ask user to input their selected menu.  If the input is not a number between 1 and 9, it will ask the user to re-input the menu.
