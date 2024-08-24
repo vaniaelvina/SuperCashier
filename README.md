@@ -70,7 +70,7 @@ An owner of a supermarket located in one of the small towns in Indonesia has a p
    - `update_item_name()`
 
      This method updates the name of an item. First, the system will ask the user which item's quantity they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct name, update it, and delete the old name from the ordered items.
-     https://github.com/vaniaelvina/SuperCashier/blob/1074d6ebf652bf20aeb1e686dbe14326ab810aa4/transaction.py#L88-L103
+     https://github.com/vaniaelvina/SuperCashier/blob/00120a25ca1b8028fbe36131baa307856dd4fc2e/transaction.py#L88-L103
 
    - `update_item_qty()`
      This method updates the quantity of an item. First, the system will ask the user which item's quantity they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct quantity, update it, and delete the old quantity from the ordered items. It will also calculate the total price of an item"
