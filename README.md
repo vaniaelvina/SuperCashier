@@ -14,9 +14,21 @@ Libraries:
 ## Project Background
 An owner of a supermarket located in one of the small towns in Indonesia has a plan to implement a cashier system that can be self-service, so customers can directly scan and pay for the items they buy, reducing the time spent buying, thus, customers do not have to queue at said town’s supermarket anymore. After conducting research, it turns out that there are problems with the system. He needs a Programmer to create some features for this self-service cashier system so that it can run smoothly.
 
-## Features
+## Project Requirement
+The cashier system must be able to:
+1. Create an ID containing orders.
+2. Add item with its name, price, and quantity.
+3. Check and display items ordered.
+4. Change item’s name, quantity, or price.
+5. Delete an item.
+6. Reset transaction by deleting all ordered items.
+7. Calculate the subtotal of the ordered items.
+8. Calculate discounts and final price.
+
+## Project Features
 1. Create an ID
 2. Add item name, item quantity, and item price
+3. Add more item
 4. Update item name
 5. Update item quantity
 6. Update item price
