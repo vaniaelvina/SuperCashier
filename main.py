@@ -78,3 +78,5 @@ def main():
         if another_trnsct == "n":
             break
 
+if __name__ == "__main__":
+    main()
