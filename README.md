@@ -25,19 +25,6 @@ The cashier system must be able to:
 7. Calculate the subtotal of the ordered items.
 8. Calculate discounts and final price.
 
-## Project Features
-1. Create an ID
-2. Add item name, item quantity, and item price
-3. Add more item
-4. Update item name
-5. Update item quantity
-6. Update item price
-7. Delete item
-8. Reset transaction
-9. Check order
-10. Finish order
-11. Exit
-
 ## Flowchart
 ![SuperCashier Flowchart (3)](https://github.com/user-attachments/assets/72207beb-8d95-453c-9772-d4af67e70306)
 
@@ -85,17 +72,17 @@ The cashier system must be able to:
      https://github.com/vaniaelvina/SuperCashier/blob/00120a25ca1b8028fbe36131baa307856dd4fc2e/transaction.py#L88-L103
 
    - `update_item_qty()`
-     This method updates the quantity of an item. First, the system will ask the user which item's quantity they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct quantity, update it, and delete the old quantity from the ordered items. It will also calculate the total price of an item"
+     This method updates the quantity of an item. First, the system will ask the user which item's quantity they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct quantity, update it, and delete the old quantity from the ordered items. It will also calculate the total price of an item
      https://github.com/vaniaelvina/SuperCashier/blob/bfd3d90e6c023a2abb5cda96e9f596dbcd93298b/transaction.py#L105-L130
      
    - `update_item_price()`
    
-     This method updates the price of an item. First, the system will ask the user which item's price they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct price, update it, and delete the old price from the ordered items. It will also calculate the total price of an item."
+     This method updates the price of an item. First, the system will ask the user which item's price they want to change. If the user inputs an item name that doesn't exist in the ordered items, the system will prompt the user to re-enter the item name. If the item exists in the ordered items, the system will ask for the correct price, update it, and delete the old price from the ordered items. It will also calculate the total price of an item.
      https://github.com/vaniaelvina/SuperCashier/blob/bfd3d90e6c023a2abb5cda96e9f596dbcd93298b/transaction.py#L132-L157
      
    - `delete_item()`
    
-     This method deletes an item.
+     This method deletes an item. If the intended item does not exist in the ordered list, the system will ask user to reinput the item again.
      https://github.com/vaniaelvina/SuperCashier/blob/bfd3d90e6c023a2abb5cda96e9f596dbcd93298b/transaction.py#L159-L174
    - `check_order()`
 
