@@ -150,4 +150,10 @@ Say a customer named Andi want to make a transaction. The program will greet him
    
    ![image](https://github.com/user-attachments/assets/a628c0c4-fbfa-4db7-97dc-605680b01f3f)
 
+## Conclusion
+SuperCashier is a simple cashier system built with Python. It has a simple UI so it allows customer to operate the system easily without manually entering commands.
 
+For future works, there are some parts that can be improved:
+
+1. Adding more interactive GUI
+2. Calculate the transaction discounts before customer finish the order
