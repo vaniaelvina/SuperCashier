@@ -109,7 +109,11 @@ The cashier system must be able to:
      
      This function drives the program's overall flow. It creates an instance of the Transaction class which is trnsct_123. It will greet user and call methods that will create customer ID and show function main menu.
      https://github.com/vaniaelvina/SuperCashier/blob/05d3bc828f45ef14121549c07f7b679e9a39e1f3/main.py#L52-L79
-   
+     
+   - calling `main()`
+     This line calls the function `main()` and ensures that it only runs when a script is executed directly, rather than when it's imported as a module into another script.
+     https://github.com/vaniaelvina/SuperCashier/blob/9697414489fac6b1a1f4fa22997fde93ae72e703/main.py#L81-L82
+     
 ## Test case
 Say a customer named Andi want to make a transaction. The program will greet him and ask him to input his name then create an ID. Then, the program will show that his cart is empty and he will be asked to add an item to his cart.
    
@@ -146,4 +150,10 @@ Say a customer named Andi want to make a transaction. The program will greet him
    
    ![image](https://github.com/user-attachments/assets/a628c0c4-fbfa-4db7-97dc-605680b01f3f)
 
+## Conclusion
+SuperCashier is a simple cashier system built with Python. It has a simple UI so it allows customer to operate the system easily without manually entering commands.
 
+For future works, there are some parts that can be improved:
+
+1. Adding more interactive GUI
+2. Calculate the transaction discounts before customer finish the order
