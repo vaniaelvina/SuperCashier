@@ -69,10 +69,10 @@ class Transaction:
                 # a loop to add more item              
                 while True:
                     add_more_item = input("\nAdd more item (y/n)? ").strip().lower()
-                    if add_more_item() == "y":
+                    if add_more_item == "y":
                         self.add_item()
                         break
-                    elif add_more_item() == "n":
+                    elif add_more_item == "n":
                         self.check_order()
                         break
                     else:
