@@ -1,19 +1,14 @@
 # SuperCashier
-
 ## Description
 SuperCashier is a self-service cashier system built using python. 
-
 ## Tools
 Languages: 
 - Python
-
 Libraries:
 - Tabulate
 - Pandas
-
 ## Project Background
 An owner of a supermarket located in one of the small towns in Indonesia has a plan to implement a cashier system that can be self-service, so customers can directly scan and pay for the items they buy, reducing the time spent buying, thus, customers do not have to queue at said town’s supermarket anymore. After conducting research, it turns out that there are problems with the system. He needs a Programmer to create some features for this self-service cashier system so that it can run smoothly.
-
 ## Project Requirement
 The cashier system must be able to:
 1. Create an ID containing orders.
@@ -24,10 +19,8 @@ The cashier system must be able to:
 6. Reset transaction by deleting all ordered items.
 7. Calculate the subtotal of the ordered items.
 8. Calculate discounts and final price.
-
 ## Flowchart
 ![SuperCashier Flowchart (3)](https://github.com/user-attachments/assets/72207beb-8d95-453c-9772-d4af67e70306)
-
 ## User flow explanation
 1. User starts the system and creates an ID.
 2. Because the cart is empty, user will be asked to add item name, its quantity and its price.
@@ -39,11 +32,9 @@ The cashier system must be able to:
 8. For subtotal amount more than Rp 300.000, user will get 8% discount.
 9. For subtotal amount more than Rp 200.000, user will get 5% discount.
 10. After the transaction, user can do another transaction with another transaction ID if needed.
-
 ## How to use
 1. Download this repository
 2. Run **main.py**
-
 ## Program explanation
 1. transaction.py
 
